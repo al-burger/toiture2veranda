@@ -1,0 +1,114 @@
+@charset "UTF-8";
+/*
+Theme Name:     Neve Custom
+Theme URI:      https://themeisle.com/themes/neve/
+Template:       neve
+Author:         ThemeIsle
+Author URI:     https://themeisle.com
+Description:    Neve is a super fast, easily customizable, multi-purpose theme. It’s perfect for blogs, small business, startups, agencies, firms, e-commerce shops (WooCommerce storefront) as well as personal portfolio sites and most types of projects. A fully AMP optimized and responsive theme, Neve will load in mere seconds and adapt perfectly on any viewing device. While it is lightweight and has a minimalist design, the theme is highly extendable, it has a highly SEO optimized code, resulting in top rankings in Google search results. Neve works perfectly with Gutenberg and the most popular page builders (Elementor, Brizy, Beaver Builder, Visual Composer, SiteOrigin, Divi). Neve is also WooCommerce ready, responsive, RTL & translation ready. Look no further. Neve is the perfect theme for you!
+Version:        1.0.0
+License:        GNU General Public License v2 or later
+License URI:    http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:    neve
+Tags: blog, custom-logo, e-commerce, rtl-language-support, post-formats, grid-layout, one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, accessibility-ready, wide-blocks, block-styles
+sass --watch style.scss:style.css
+*/
+button, a {
+  transition: 0.2s ease;
+  color: #0F0F0F;
+}
+
+h2.wp-block-heading {
+  position: relative;
+  margin: 3rem 0;
+}
+h2.wp-block-heading::after {
+  content: "";
+  display: block;
+  width: 5rem;
+  height: 0.33rem;
+  background-color: #D74A27;
+  position: absolute;
+  left: 3px;
+}
+
+.hfg-slot.left {
+  background-color: #FEDC00;
+}
+.hfg-slot.left::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  background-color: #FEDC00;
+  width: 500px;
+  height: 100%;
+}
+.hfg-slot.left::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 50%;
+  bottom: 0;
+  left: 0;
+  background-color: #FEDC00;
+  transform-origin: top right;
+  transform: skew(-45deg);
+}
+.hfg-slot.left .builder-item--logo {
+  z-index: 1;
+}
+
+#wpforms-form-60 {
+  max-width: 400px;
+  margin: auto;
+}
+#wpforms-form-60 .wpforms-field .wpforms-field-medium {
+  max-width: 100%;
+}
+#wpforms-form-60 .wpforms-submit {
+  width: 100%;
+  border-radius: 10px;
+  height: auto;
+  padding: 0.75rem 3rem;
+  color: #0F0F0F;
+  background: none;
+  background-color: #FEDC00;
+  text-transform: uppercase;
+}
+#wpforms-form-60 .wpforms-submit:hover {
+  background: none;
+  background-color: #FDB900;
+  color: white;
+}
+
+.alignfull.wp-block-cover {
+  color: red;
+}
+.alignfull.wp-block-cover .wp-block-cover__inner-container {
+  color: blue;
+}
+.alignfull.wp-block-cover .wp-block-cover__inner-container .wp-block-group {
+  width: 35%;
+}
+
+.wp-container-9 {
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+.wp-container-9 .wp-block-column {
+  display: flex;
+  max-width: 25%;
+}
+.wp-container-9 .wp-block-column .wp-block-image {
+  width: 50%;
+  margin: auto 1rem auto 0;
+}
+.wp-container-9 .wp-block-column .wp-block-group__inner-container h3 {
+  margin-bottom: 0.5rem;
+}
+.wp-container-9 .wp-block-column .wp-block-group__inner-container p {
+  line-height: 1.25rem;
+  margin-bottom: 0;
+}
+
+/*# sourceMappingURL=style.css.map */

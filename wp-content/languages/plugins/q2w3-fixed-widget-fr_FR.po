@@ -1,0 +1,155 @@
+# Translation of Plugins - Fixed Widget and Sticky Elements for WordPress - Stable (latest release) in French (France)
+# This file is distributed under the same license as the Plugins - Fixed Widget and Sticky Elements for WordPress - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2022-10-05 08:48:18+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: GlotPress/4.0.0-alpha.3\n"
+"Language: fr\n"
+"Project-Id-Version: Plugins - Fixed Widget and Sticky Elements for WordPress - Stable (latest release)\n"
+
+#. Author URI of the plugin
+msgid "https://wpadvancedads.com/fixed-widget-wordpress"
+msgstr "https://wpadvancedads.com/fixed-widget-wordpress"
+
+#: q2w3-fixed-widget.php:436
+msgid "The improved script works best with themes that support flexbox instead of float."
+msgstr "Le script amélioré fonctionne mieux avec les thèmes qui prennent en charge « flexbox » au lieu de « float »."
+
+#: q2w3-fixed-widget.php:434
+msgid "Enable this option to use the completely updated script. It takes care of common issues and layout shifts."
+msgstr "Activez cette option pour utiliser le script entièrement mis à jour. Il prend en charge les problèmes courants et les modifications de la mise en page."
+
+#: q2w3-fixed-widget.php:431
+msgid "Improved version"
+msgstr "Version améliorée"
+
+#: q2w3-fixed-widget.php:491
+msgid "provides many features to manage and optimize your ads and to boost your conversions. It works perfectly with the Fixed Widget plugin."
+msgstr "offre de nombreuses fonctionnalités pour gérer et optimiser vos pubs et pour augmenter vos conversions. Il fonctionne parfaitement avec l’extension Fixed Widget."
+
+#: q2w3-fixed-widget.php:481
+msgid "The stop elements will push sticky elements up as soon as they reach them while scrolling."
+msgstr "Les éléments d’arrêt pousseront les éléments épinglés vers le haut dès qu’ils les atteindront lors du défilement."
+
+#: q2w3-fixed-widget.php:480
+msgid "The distance fixed elements will keep from the bottom of the window."
+msgstr "La distance que les éléments épinglés conserveront par rapport au bas de la fenêtre."
+
+#: q2w3-fixed-widget.php:479
+msgid "The distance fixed elements will keep from the top of the window."
+msgstr "La distance que les éléments épinglés conserveront par rapport au haut de la fenêtre."
+
+#: q2w3-fixed-widget.php:464 q2w3-fixed-widget.php:482
+msgid "One entry per line."
+msgstr "Une entrée par ligne."
+
+#: q2w3-fixed-widget.php:464 q2w3-fixed-widget.php:482
+msgid "Accepts IDs, Class, and Type selectors."
+msgstr "Accepte les sélecteurs d’ID, de classe et de type."
+
+#: q2w3-fixed-widget.php:464
+msgid "Add HTML element selectors that should be fixed."
+msgstr "Ajouter les sélecteurs d’éléments HTML qui devraient être corrigés."
+
+#: q2w3-fixed-widget.php:454
+msgid "Minimum Screen Height"
+msgstr "Hauteur minimale de l’écran"
+
+#: q2w3-fixed-widget.php:453
+msgid "Disable the plugin on small devices. When the browser screen width is less than the specified value, Fixed Widget will not make any elements sticky."
+msgstr "Désactivez l’extension sur les petits appareils. Lorsque la largeur de l’écran du navigateur est inférieure à la valeur spécifiée, Fixed Widget ne rendra aucun élément épinglé."
+
+#: q2w3-fixed-widget.php:453
+msgid "Minimum Screen Width"
+msgstr "Largeur minimale de l’écran"
+
+#. translators: %1$s is an opening a tag, %2ds is a closing one
+#: q2w3-fixed-widget.php:441
+msgid "If you discover any issues then please report them %1$shere%2$s"
+msgstr "Si vous découvrez des problèmes, veuillez les signaler %1$sici%2$s"
+
+#: q2w3-fixed-widget.php:385
+msgid "Custom Fixed Elements"
+msgstr "Personnaliser les éléments épinglés"
+
+#: q2w3-fixed-widget.php:384 q2w3-fixed-widget.php:481
+msgid "Stop Elements"
+msgstr "Arrêter des éléments"
+
+#. Plugin Name of the plugin
+#: q2w3-fixed-widget.php:293 q2w3-fixed-widget.php:391 js/backend.js:1409
+msgid "Fixed Widget"
+msgstr "Fixed Widget"
+
+#: q2w3-fixed-widget.php:537
+msgid "Settings"
+msgstr "Réglages"
+
+#: q2w3-fixed-widget.php:508
+msgid "Install Now"
+msgstr "Installer maintenant"
+
+#: q2w3-fixed-widget.php:505
+msgid "Activate Now"
+msgstr "Activer maintenant"
+
+#: q2w3-fixed-widget.php:454
+msgid " Works like the Minimum Width option."
+msgstr "Fonctionne comme l’option « Désactiver la largeur »"
+
+#: q2w3-fixed-widget.php:415
+msgid " Note for users of caching plugins. Please, don’t forget to clear the cache after changing options."
+msgstr "Note pour les utilisateurs d’extension de mise en cache. Veuillez ne pas oublier de vider le cache après chaque modification des options."
+
+#: q2w3-fixed-widget.php:387
+msgid "Documentation and Support"
+msgstr "Documentation et support"
+
+#: q2w3-fixed-widget.php:386
+msgid "Recommended Integration"
+msgstr "Intégration recommandée"
+
+#. Description of the plugin
+msgid "Use the fixed widget plugin to create sticky widgets that stay in the visible screen area when the page is scrolled up or down and boost your conversions."
+msgstr "Utilisez l’extension Fixed Widget pour créer des widgets épinglés qui restent visibles dans la zone d’écran lorsque la page est défilée vers le haut ou le bas et décuplez vos conversions."
+
+#. Author of the plugin
+msgid "Thomas Maier, Max Bond"
+msgstr "Thomas Maier, Max Bond"
+
+#. Plugin URI of the plugin
+msgid "https://wpadvancedads.com/fixed-widget-wordpress/"
+msgstr "https://wpadvancedads.com/fixed-widget-wordpress/"
+
+#: q2w3-fixed-widget.php:480
+msgid "Margin Bottom"
+msgstr "Marge inférieure"
+
+#: q2w3-fixed-widget.php:453 q2w3-fixed-widget.php:454
+#: q2w3-fixed-widget.php:479 q2w3-fixed-widget.php:480
+msgid "px"
+msgstr "px"
+
+#: q2w3-fixed-widget.php:479
+msgid "Margin Top"
+msgstr "Marge supérieure"
+
+#: q2w3-fixed-widget.php:417
+msgid "Save Changes"
+msgstr "Enregistrer les changements"
+
+#: q2w3-fixed-widget.php:394
+msgid "Settings saved."
+msgstr "Réglages enregistrés."
+
+#: q2w3-fixed-widget.php:383
+msgid "General Options"
+msgstr "Options générales"
+
+#: q2w3-fixed-widget.php:263
+msgid "Fixed widget"
+msgstr "Fixed widget"

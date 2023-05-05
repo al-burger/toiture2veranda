@@ -1,0 +1,27 @@
+#wpforms-form-60 {
+    max-width: 400px;
+    margin: auto;
+
+    .wpforms-field {
+        .wpforms-field-medium {
+            max-width: 100%;
+        }
+    }
+
+    .wpforms-submit {
+        width: 100%;
+        border-radius: 10px;
+        height:auto;
+        padding: 0.75rem 3rem;
+        color: $text-color;
+        background: none;
+        background-color: $main-color;
+        text-transform: uppercase;
+
+        &:hover {
+            background: none;
+            background-color: $main-color-hover;
+            color:white;
+        }
+    }
+}

@@ -13,16 +13,24 @@ Text Domain:    neve
 Tags: blog, custom-logo, e-commerce, rtl-language-support, post-formats, grid-layout, one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, accessibility-ready, wide-blocks, block-styles
 sass --watch style.scss:style.css
 */
-button, a {
+button,
+a {
   transition: 0.2s ease;
   color: #0F0F0F;
 }
+button:hover,
+a:hover {
+  box-shadow: none !important;
+  opacity: 1 !important;
+}
 
-h2.wp-block-heading {
+h2.wp-block-heading,
+h1.wp-block-heading {
   position: relative;
   margin: 3rem 0;
 }
-h2.wp-block-heading::after {
+h2.wp-block-heading::after,
+h1.wp-block-heading::after {
   content: "";
   display: block;
   width: 5rem;
@@ -32,10 +40,10 @@ h2.wp-block-heading::after {
   left: 3px;
 }
 
-.hfg-slot.left {
+.header .hfg-slot.left {
   background-color: #FEDC00;
 }
-.hfg-slot.left::before {
+.header .hfg-slot.left::before {
   content: "";
   position: absolute;
   left: 0;
@@ -43,7 +51,7 @@ h2.wp-block-heading::after {
   width: 500px;
   height: 100%;
 }
-.hfg-slot.left::after {
+.header .hfg-slot.left::after {
   content: "";
   position: absolute;
   top: 0;
@@ -54,13 +62,53 @@ h2.wp-block-heading::after {
   transform-origin: top right;
   transform: skew(-45deg);
 }
-.hfg-slot.left .builder-item--logo {
+.header .hfg-slot.left .builder-item--logo {
   z-index: 1;
+}
+
+.header-main-inner {
+  z-index: 1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.wp-block-image [class^=wp-image-] {
+  border-radius: 10px;
+}
+
+.sticky-anchor {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  z-index: 999;
+}
+.sticky-anchor .wp-element-button {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+}
+
+.fade-in-element {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#header-grid .header-main {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 2;
 }
 
 #wpforms-form-60 {
   max-width: 400px;
   margin: auto;
+}
+#wpforms-form-60 .wpforms-field {
+  padding: 0.5rem 0;
 }
 #wpforms-form-60 .wpforms-field .wpforms-field-medium {
   max-width: 100%;
@@ -74,6 +122,8 @@ h2.wp-block-heading::after {
   background: none;
   background-color: #FEDC00;
   text-transform: uppercase;
+  line-height: 1.6rem;
+  font-weight: bold;
 }
 #wpforms-form-60 .wpforms-submit:hover {
   background: none;
@@ -81,13 +131,7 @@ h2.wp-block-heading::after {
   color: white;
 }
 
-.alignfull.wp-block-cover {
-  color: red;
-}
-.alignfull.wp-block-cover .wp-block-cover__inner-container {
-  color: blue;
-}
-.alignfull.wp-block-cover .wp-block-cover__inner-container .wp-block-group {
+.alignfull.wp-block-cover .wp-block-cover__inner-container .wp-block-group__inner-title {
   width: 35%;
 }
 

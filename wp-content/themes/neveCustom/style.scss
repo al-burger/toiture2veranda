@@ -20,36 +20,46 @@ $secondary-color: #D74A27;
 $secondary-color-hover: #FF5722;
 $yellow-bg: #F9F4DA;
 
-button, a {
+button,
+a {
     transition: 0.2s ease;
     color: $text-color;
-}
 
-h2.wp-block-heading {
-    position: relative;
-    margin: 3rem 0;
-    &::after {
-        content:'';
-        display: block;
-        width:5rem;
-        height: .33rem;
-        background-color: $secondary-color;
-        position: absolute;
-        left:3px;
+    &:hover {
+        box-shadow: none!important;
+        opacity: 1!important;
     }
 }
 
-.hfg-slot {
+h2.wp-block-heading,
+h1.wp-block-heading {
+    position: relative;
+    margin: 3rem 0;
+
+    &::after {
+        content: '';
+        display: block;
+        width: 5rem;
+        height: .33rem;
+        background-color: $secondary-color;
+        position: absolute;
+        left: 3px;
+    }
+}
+
+.header .hfg-slot {
     &.left {
         background-color: $main-color;
+
         &::before {
-            content:'';
+            content: '';
             position: absolute;
-            left:0;
+            left: 0;
             background-color: $main-color;
             width: 500px;
-            height:100%;
+            height: 100%;
         }
+
         &::after {
             content: '';
             position: absolute;
@@ -61,11 +71,58 @@ h2.wp-block-heading {
             transform-origin: top right;
             transform: skew(-45deg);
         }
+
         .builder-item--logo {
             z-index: 1;
         }
     }
-} 
+}
+
+.header {
+    &-main-inner {
+        z-index: 1;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.wp-block-image {
+    [class^="wp-image-"] {
+        border-radius: 10px
+    }
+}
+
+.sticky-anchor {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    z-index: 999;
+
+    .wp-element-button {
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+    }
+}
+
+.fade-in-element {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+//////////////////////////////// header
+
+#header-grid {
+     .header-main {
+        position: fixed;
+        left: 0;
+        right: 0;
+        z-index: 2;
+     }
+}
 
 @import './forms.scss';
 @import './hero.scss';

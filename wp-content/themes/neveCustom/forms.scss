@@ -3,6 +3,7 @@
     margin: auto;
 
     .wpforms-field {
+        padding: .5rem 0;
         .wpforms-field-medium {
             max-width: 100%;
         }
@@ -17,6 +18,8 @@
         background: none;
         background-color: $main-color;
         text-transform: uppercase;
+        line-height: 1.6rem;
+        font-weight: bold;
 
         &:hover {
             background: none;

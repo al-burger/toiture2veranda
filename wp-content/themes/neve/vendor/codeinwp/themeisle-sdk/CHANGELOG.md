@@ -1,3 +1,39 @@
+##### [Version 3.3.6](https://github.com/Codeinwp/themeisle-sdk/compare/v3.3.5...v3.3.6) (2023-10-05)
+
+- Fix duplicate notification in Neve FSE
+- Fix SDK breaking Enfold theme builder
+
+##### [Version 3.3.5](https://github.com/Codeinwp/themeisle-sdk/compare/v3.3.4...v3.3.5) (2023-09-29)
+
+Fix TPC message.
+Fix TPC typo.
+
+##### [Version 3.3.4](https://github.com/Codeinwp/themeisle-sdk/compare/v3.3.3...v3.3.4) (2023-09-18)
+
+- Allow users to activate plugins from the About page
+
+##### [Version 3.3.3](https://github.com/Codeinwp/themeisle-sdk/compare/v3.3.2...v3.3.3) (2023-08-22)
+
+- Disable install buttons on the About page if users can not install plugins
+
+##### [Version 3.3.2](https://github.com/Codeinwp/themeisle-sdk/compare/v3.3.1...v3.3.2) (2023-08-02)
+
+- Added a new product page for Otter
+
+##### [Version 3.3.1](https://github.com/Codeinwp/themeisle-sdk/compare/v3.3.0...v3.3.1) (2023-06-21)
+
+- Fix Neve FSE promo typo
+
+#### [Version 3.3.0](https://github.com/Codeinwp/themeisle-sdk/compare/v3.2.41...v3.3.0) (2023-05-30)
+
+- Adds About Page Integration
+- Adds promos for Neve FSE, Sparks & PPOM
+
+##### [Version 3.2.41](https://github.com/Codeinwp/themeisle-sdk/compare/v3.2.40...v3.2.41) (2023-05-10)
+
+- Delay product recommendation mentions
+- Allow upselling notifications for new users
+
 ##### [Version 3.2.40](https://github.com/Codeinwp/themeisle-sdk/compare/v3.2.39...v3.2.40) (2023-03-30)
 
 - Add ROP upsell to all products

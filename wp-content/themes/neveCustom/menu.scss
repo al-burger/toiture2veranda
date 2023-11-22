@@ -1,0 +1,61 @@
+
+@media (max-width: 1024px) {
+    .header--row-inner {
+        background-color: $main-color;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+        right: 0;
+        left: 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+}
+@media (min-width: 1024px) {
+  .header .hfg-slot {
+    /* Styles à appliquer uniquement pour les écrans de bureau */
+    &.left {
+      background-color: $main-color;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        background-color: $main-color;
+        width: 500px;
+        height: 100%;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 50%;
+        bottom: 0;
+        left: 0;
+        background-color: $main-color;
+        transform-origin: top right;
+        transform: skew(-45deg);
+      }
+
+      .builder-item--logo {
+        z-index: 1;
+      }
+    }
+
+    #header-grid {
+      .header-main {
+        position: fixed;
+        left: 0;
+        right: 0;
+        z-index: 2;
+      }
+    }
+  }
+
+  .header {
+    &-main-inner {
+      z-index: 1;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  }
+}

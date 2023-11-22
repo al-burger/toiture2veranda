@@ -1,10 +1,14 @@
 function handleStickyScroll() {
-  document.querySelector('.sticky-anchor').addEventListener('click', function() {
-    var formElement = document.getElementById('wpforms-form-60');
-    formElement.scrollIntoView({ behavior: 'smooth' });
-  });
-}
+  var stickyAnchor = document.querySelector('.sticky-anchor');
 
+  // Vérifier si l'élément sticky-anchor existe
+  if (stickyAnchor) {
+    stickyAnchor.addEventListener('click', function() {
+      var formElement = document.getElementById('wpforms-form-60');
+      formElement.scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+}
 function fadeInElements() {
   var fadeElements = document.querySelectorAll('.fade-in-element');
   var windowBottom = window.innerHeight;
@@ -25,6 +29,16 @@ function fadeInElements() {
 
   window.addEventListener('scroll', handleScroll);
 }
+
+
+window.addEventListener('scroll', function() {
+  const scrollY = window.scrollY;
+  const parallaxElement = document.querySelector('.nv-post-cover');
+  if (parallaxElement) {
+    parallaxElement.style.backgroundPositionY = -(scrollY * 0.25) + 'px';
+  }
+});
+
 
 fadeInElements();
 handleStickyScroll();

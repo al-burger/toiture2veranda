@@ -674,7 +674,7 @@ blockquote.is-style-large.wp-block-quote > p {
 
 .site-logo h1,
 .site-logo p {
-  font-size: 24px;
+  font-size: var(--fs);
   font-weight: var(--h1fontweight);
   line-height: var(--bodylineheight);
   letter-spacing: var(--bodyletterspacing);
@@ -708,9 +708,8 @@ blockquote.is-style-large.wp-block-quote > p {
   margin-right: calc(var(--spacing) / 2 * -1);
 }
 
-.nav-ul li > .wrap {
-  display: flex;
-  align-items: center;
+.nav-ul > li {
+  margin: 0 calc(var(--spacing) / 2);
 }
 
 .nav-ul li a {
@@ -722,13 +721,15 @@ blockquote.is-style-large.wp-block-quote > p {
   align-items: center;
 }
 
-.nav-ul li:hover > .wrap > a,
-.nav-ul li:hover > .wrap > .caret {
-  color: var(--hovercolor);
+.nav-ul .caret {
+  line-height: 0;
+  justify-content: center;
+  display: flex;
 }
 
-.nav-ul > li {
-  margin: 0 calc(var(--spacing) / 2);
+.nav-ul .caret svg {
+  width: 0.5em;
+  height: 0.5em;
 }
 
 .nav-ul li {
@@ -736,20 +737,19 @@ blockquote.is-style-large.wp-block-quote > p {
   position: relative;
 }
 
-.nav-ul li.current-menu-item > .wrap > a:not([href*="#"]) {
+.nav-ul li > .wrap {
+  display: flex;
+  align-items: center;
+}
+
+.nav-ul li.nv-active > .wrap .caret,
+.nav-ul li.nv-active > .wrap > a {
   color: var(--activecolor);
 }
 
-.nav-ul li .caret {
-  line-height: 0;
-  justify-content: center;
-  display: flex;
-}
-
-.nav-ul li .caret svg {
-  fill: currentColor;
-  width: 0.5em;
-  height: 0.5em;
+.nav-ul li:hover > .wrap .caret,
+.nav-ul li:hover > .wrap > a {
+  color: var(--hovercolor, var(--nv-primary-accent));
 }
 
 .nav-ul .sub-menu {
@@ -985,7 +985,7 @@ blockquote.is-style-large.wp-block-quote > p {
   left: 0;
   right: 0;
   pointer-events: none;
-  background-color: var(--hovercolor, currentColor);
+  background-color: var(--hovercolor, var(--nv-primary-accent, currentColor));
 }
 
 .style-full-height > ul > li > .wrap,
@@ -1001,6 +1001,11 @@ blockquote.is-style-large.wp-block-quote > p {
   left: calc(var(--spacing) / 2 * -1);
   height: 100%;
   z-index: -1;
+}
+
+.style-full-height > ul > li > .wrap:hover svg,
+.sm-style-full-height .sub-menu .wrap:hover svg {
+  color: var(--hovertextcolor, var(--color));
 }
 
 .style-full-height > ul > li > .wrap:hover > a,
@@ -2178,7 +2183,7 @@ body.elementor-page .wrapper {
 }
 
 .header-menu-sidebar-bg {
-  background-color: var(--bgcolor);
+  background: var(--bgcolor);
   color: var(--color);
   position: relative;
   display: flex;
@@ -2426,7 +2431,7 @@ body.elementor-page .wrapper {
 [class*="row-inner"],
 .header-menu-sidebar-bg {
   position: relative;
-  background-image: var(--bgimage, none);
+  background: var(--bgimage, var(--bgcolor, #fff));
   background-position: var(--bgposition, center);
   background-repeat: no-repeat;
   background-size: cover;

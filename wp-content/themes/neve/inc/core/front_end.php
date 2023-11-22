@@ -15,6 +15,7 @@ use Neve\Compatibility\Starter_Content;
 use Neve\Core\Settings\Config;
 use Neve\Core\Settings\Mods;
 use Neve\Core\Dynamic_Css;
+use Neve\Core\Traits\Theme_Mods;
 
 /**
  * Front end handler class.
@@ -22,6 +23,7 @@ use Neve\Core\Dynamic_Css;
  * @package Neve\Core
  */
 class Front_End {
+	use Theme_Mods;
 
 	/**
 	 * Theme setup.
@@ -313,14 +315,40 @@ class Front_End {
 		$primary_values   = get_theme_mod( Config::MODS_BUTTON_PRIMARY_STYLE, neve_get_button_appearance_default() );
 		$secondary_values = get_theme_mod( Config::MODS_BUTTON_SECONDARY_STYLE, neve_get_button_appearance_default( 'secondary' ) );
 
+		$style = '';
+
 		if (
 			( isset( $primary_values['useShadow'] ) && ! empty( $primary_values['useShadow'] ) ) ||
 			( isset( $primary_values['useShadowHover'] ) && ! empty( $primary_values['useShadowHover'] ) ) ||
 			( isset( $secondary_values['useShadow'] ) && ! empty( $secondary_values['useShadow'] ) ) ||
 			( isset( $secondary_values['useShadowHover'] ) && ! empty( $secondary_values['useShadowHover'] ) )
 		) {
-			wp_add_inline_style( 'neve-style', '.button.button-primary, .is-style-primary .wp-block-button__link {box-shadow: var(--primarybtnshadow, none);} .button.button-primary:hover, .is-style-primary .wp-block-button__link:hover {box-shadow: var(--primarybtnhovershadow, none);} .button.button-secondary, .is-style-secondary .wp-block-button__link {box-shadow: var(--secondarybtnshadow, none);} .button.button-secondary:hover, .is-style-secondary .wp-block-button__link:hover {box-shadow: var(--secondarybtnhovershadow, none);}' );
+			$style .= '.button.button-primary, .is-style-primary .wp-block-button__link {box-shadow: var(--primarybtnshadow, none);} .button.button-primary:hover, .is-style-primary .wp-block-button__link:hover {box-shadow: var(--primarybtnhovershadow, none);} .button.button-secondary, .is-style-secondary .wp-block-button__link {box-shadow: var(--secondarybtnshadow, none);} .button.button-secondary:hover, .is-style-secondary .wp-block-button__link:hover {box-shadow: var(--secondarybtnhovershadow, none);}';
 		}
+
+		foreach ( neve_get_headings_selectors() as $heading_id => $heading_selector ) {
+			$font_family = get_theme_mod( $this->get_mod_key_heading_fontfamily( $heading_id ), '' ); // default value is empty string to be consistent with default customizer control value.
+
+			$css_var = sprintf( '--%1$sfontfamily', $heading_id );
+
+			if ( is_customize_preview() ) {
+				$style .= sprintf( '%s {font-family: var(%s, var(--headingsfontfamily)), var(--nv-fallback-ff);} ', $heading_id, $css_var ); // fallback values for the first page load on the customizer
+				continue;
+			}
+
+			// If font family is inherit, do not add a style for this heading.
+			if ( $font_family === '' ) {
+				continue;
+			}
+
+			$style .= sprintf( '%s {font-family: var(%s);}', $heading_id, $css_var );
+		}
+
+		if ( empty( $style ) ) {
+			return;
+		}
+
+		wp_add_inline_style( 'neve-style', Dynamic_Css::minify_css( $style ) );
 	}
 
 	/**
@@ -482,25 +510,43 @@ class Front_End {
 	 */
 	public function get_strings() {
 		return [
-			'add_item'          => __( 'Add item', 'neve' ),
-			'add_items'         => __( 'Add items by clicking the ones below.', 'neve' ),
-			'all_selected'      => __( 'All items are already selected.', 'neve' ),
-			'page_layout'       => __( 'Page Layout', 'neve' ),
-			'page_title'        => __( 'Page Title', 'neve' ),
-			'upsell_components' => __( 'Upgrade to Neve Pro and unlock all components, including Wish List, Breadcrumbs, Custom Layouts and many more.', 'neve' ),
-			'header_booster'    => esc_html__( 'Header Booster', 'neve' ),
-			'blog_booster'      => esc_html__( 'Blog Booster', 'neve' ),
-			'woo_booster'       => esc_html__( 'WooCommerce Booster', 'neve' ),
-			'custom_layouts'    => esc_html__( 'Custom Layouts', 'neve' ),
-			'white_label'       => esc_html__( 'White Label module', 'neve' ),
-			'scroll_to_top'     => esc_html__( 'Scroll to Top module', 'neve' ),
-			'elementor_booster' => esc_html__( 'Elementor Booster', 'neve' ),
-			'ext_h_description' => esc_html__( 'Extend your header with more components and settings, build sticky/transparent headers or display them conditionally.', 'neve' ),
-			'ctm_h_description' => esc_html__( 'Easily create custom headers and footers as well as adding your own custom code or content in any of the hooks locations.', 'neve' ),
-			'elem_description'  => esc_html__( 'Leverage the true flexibility of Elementor with powerful addons and templates that you can import with just one click.', 'neve' ),
-			'get_pro_cta'       => esc_html__( 'Get the PRO version!', 'neve' ),
-			'opens_new_tab_des' => esc_html__( '(opens in a new tab)', 'neve' ),
-			'filter'            => __( 'Filter', 'neve' ),
+			'add_item'                 => __( 'Add item', 'neve' ),
+			'add_items'                => __( 'Add items by clicking the ones below.', 'neve' ),
+			'all_selected'             => __( 'All items are already selected.', 'neve' ),
+			'page_layout'              => __( 'Page Layout', 'neve' ),
+			'page_title'               => __( 'Page Title', 'neve' ),
+			'upsell_components'        => __( 'Upgrade to Neve Pro and unlock all components, including Wish List, Breadcrumbs, Custom Layouts and many more.', 'neve' ),
+			'header_booster'           => esc_html__( 'Header Booster', 'neve' ),
+			'blog_booster'             => esc_html__( 'Blog Booster', 'neve' ),
+			'woo_booster'              => esc_html__( 'WooCommerce Booster', 'neve' ),
+			'custom_layouts'           => esc_html__( 'Custom Layouts', 'neve' ),
+			'white_label'              => esc_html__( 'White Label module', 'neve' ),
+			'scroll_to_top'            => esc_html__( 'Scroll to Top module', 'neve' ),
+			'elementor_booster'        => esc_html__( 'Elementor Booster', 'neve' ),
+			'ext_h_description'        => esc_html__( 'Extend your header with more components and settings, build sticky/transparent headers or display them conditionally.', 'neve' ),
+			'ctm_h_description'        => esc_html__( 'Easily create custom headers and footers as well as adding your own custom code or content in any of the hooks locations.', 'neve' ),
+			'elem_description'         => esc_html__( 'Leverage the true flexibility of Elementor with powerful addons and templates that you can import with just one click.', 'neve' ),
+			'get_pro_cta'              => esc_html__( 'Get the PRO version!', 'neve' ),
+			'opens_new_tab_des'        => esc_html__( '(opens in a new tab)', 'neve' ),
+			'filter'                   => __( 'Filter', 'neve' ),
+			/* translators: %s - Theme name */
+			'neve_options'             => __( '%s Options', 'neve' ),
+			'migrate_builder_d'        => __( 'Migrating builder data', 'neve' ),
+			'rollback_builder'         => __( 'Rolling back builder', 'neve' ),
+			'remove_old_data'          => __( 'Removing old data', 'neve' ),
+			'customizer_values_notice' => __( 'You must save the current customizer values before running the migration.', 'neve' ),
+			'wrong_reload_notice'      => __( 'Something went wrong. Please reload the page and try again.', 'neve' ),
+			'rollback_to_old'          => __( 'Want to roll back to the old builder?', 'neve' ),
+			'new_hfg_experience'       => __( "We've created a new Header/Footer Builder experience! You can always roll back to the old builder from right here.", 'neve' ),
+			'manual_adjust'            => __( 'Some manual adjustments may be required.', 'neve' ),
+			'reload'                   => __( 'Reload', 'neve' ),
+			'migrate'                  => __( 'Migrate Builders Data', 'neve' ),
+			'legacy_skin'              => __( 'Legacy Skin', 'neve' ),
+			'neve_30'                  => __( 'Neve 3.0', 'neve' ),
+			'switching_skin'           => __( 'Switching skin', 'neve' ),
+			'switch_skin'              => __( 'Switch Skin', 'neve' ),
+			'dismiss'                  => __( 'Dismiss', 'neve' ),
+			'rollback'                 => __( 'Roll Back', 'neve' ),
 		];
 	}
 

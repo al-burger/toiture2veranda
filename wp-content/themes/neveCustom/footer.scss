@@ -1,0 +1,28 @@
+#site-footer {
+  #cb-row--footer-bottom {
+    display: none;
+  }
+
+  .builder-item .item--inner {
+    font-size: .75rem;
+  }
+
+  .hfg-slot {
+    margin: 2rem 0;
+    &.c-left {
+      border-left: 1px solid white;
+      border-right: 1px solid white;
+    }
+  }
+  .wp-block-latest-posts__list {
+    li {
+        font-style: italic;
+    }
+    li::before {
+        content: "'' "
+    }
+    li::after {
+        content: " ''"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.t2v-realisations {
+    margin-top: 2rem;
+    .envira {
+        &-lazy {
+            overflow: hidden; /* Cvscode-file://vscode-app/d:/Jeux%20Video%20&%20Logiciels/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.htmlache tout ce qui dépasse du conteneur */
+            transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); /* Transition plus lente et plus douce */
+        }
+    
+        &-gallery-image {
+            width: 100%; /* L'image remplit le conteneur */
+            height: auto; /* Garantit que l'aspect ratio est préservé */
+            display: block;
+    
+            &:hover {
+                transform: scale(1.05); /* Zoom l'image de 105% */
+            }
+        }
+    }
+}

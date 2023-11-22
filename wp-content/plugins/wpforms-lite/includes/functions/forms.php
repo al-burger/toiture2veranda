@@ -16,7 +16,13 @@
  */
 function wpforms_display( $form_id = false, $title = false, $desc = false ) {
 
-	wpforms()->frontend->output( $form_id, $title, $desc );
+	$frontend = wpforms()->get( 'frontend' );
+
+	if ( empty( $frontend ) ) {
+		return;
+	}
+
+	$frontend->output( $form_id, $title, $desc );
 }
 
 /**
@@ -155,6 +161,10 @@ function wpforms_setting( $key, $default = false, $option = 'wpforms_settings' )
 /**
  * Update plugin settings option and allow it to be filterable.
  *
+ * The purpose of this function is to save settings when the "Save Settings" button is clicked.
+ * If you are programmatically saving setting in the database in cases not triggered by user,
+ * use update_option() instead.
+ *
  * @since 1.6.6
  *
  * @param array $settings A plugin settings array that is saved into options table.
@@ -162,6 +172,8 @@ function wpforms_setting( $key, $default = false, $option = 'wpforms_settings' )
  * @return bool
  */
 function wpforms_update_settings( $settings ) {
+
+	$old_settings = (array) get_option( 'wpforms_settings', [] );
 
 	/**
 	 * Allows plugin settings to be modified before persisting in the database.
@@ -180,11 +192,13 @@ function wpforms_update_settings( $settings ) {
 	 * The `$updated` parameter allows to check whether the update was actually successful.
 	 *
 	 * @since 1.6.1
+	 * @since 1.8.4 The `$old_settings` parameter was added.
 	 *
-	 * @param array  $settings An array of plugin settings.
-	 * @param bool   $updated  Whether an option was updated or not.
+	 * @param array $settings     An array of plugin settings.
+	 * @param bool  $updated      Whether an option was updated or not.
+	 * @param array $old_settings An old array of plugin settings.
 	 */
-	do_action( 'wpforms_settings_updated', $settings, $updated );
+	do_action( 'wpforms_settings_updated', $settings, $updated, $old_settings );
 
 	return $updated;
 }

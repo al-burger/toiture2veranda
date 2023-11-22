@@ -1,8 +1,8 @@
 === Neve ===
 Contributors: themeisle
 Tags: blog,block-patterns, custom-logo, e-commerce, rtl-language-support, grid-layout, one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, accessibility-ready, wide-blocks, block-styles, footer-widgets, portfolio, left-sidebar, right-sidebar
-Requires at least: 4.0
-Tested up to: 6.2
+Requires at least: 5.5
+Tested up to: 6.3
 Stable tag: trunk
 Requires PHP: 7.0
 License: GPLv2 or later
@@ -18,6 +18,138 @@ Neve WordPress theme, Copyright 2018 Themeisle
 Neve is distributed under the terms of the GNU GPLv2 or later
 
 == Changelog ==
+
+##### [Version 3.7.2](https://github.com/Codeinwp/neve/compare/v3.7.1...v3.7.2) (2023-10-05)
+
+### Bug Fixes
+- **Changelog Formatting**: Addressed PHP dashboard notices caused by the updated changelog format
+
+
+
+
+##### [Version 3.7.1](https://github.com/Codeinwp/neve/compare/v3.7.0...v3.7.1) (2023-10-05)
+
+### Improvements
+- **Google Fonts**: Updated the Google Fonts library
+- **Onboarding UX**: Enhanced the onboarding process for a smoother user experience.
+- **WooCommerce Compatibility Check**: Verified the compatibility with WooCommerce 8.1 to ensure there are no issues.
+- **Elementor Compatibility Check**: Verified the compatibility with Elementor 3.17 to ensure there are no issues.
+
+### Bug Fixes
+- **Accessibility Fix**: Addressed the accessibility issue flagged on PageSpeed Insights, which was triggered by the absence of the tagline alongside the site title in the aria-label attribute.
+- **Light Mode Logo Correction**: Fixed the issue of the dark-mode logo being displayed inappropriately during the first visit in light mode.
+- **Onboarding redirection**: Fixed the issue where users got redirected to the old onboarding if they were installing the Cloud Templates & Patterns collection plugin from the dashboard
+
+
+
+
+#### [Version 3.7.0](https://github.com/Codeinwp/neve/compare/v3.6.7...v3.7.0) (2023-09-25)
+
+- [Feat] Improve the UX by decreasing the opacity of the Editor Title if the disabled title toggle from Neve Options inside the editor is active
+- [Feat] New option for the Logo component to control the font size
+- [Fix] Images not loading in the mega menu with AMP enabled
+- [Fix] Missing text domain for a string
+- [Fix] Translations are not applying for some particular strings
+- [Fix] Access in the dashboard for admin users on multisite environments
+- Remove any remaining legacy skin code
+
+
+
+
+##### [Version 3.6.7](https://github.com/Codeinwp/neve/compare/v3.6.6...v3.6.7) (2023-08-22)
+
+- [Fix] Addressed a json_decode issue in utilities.php that could potentially arise depending on the value from the database
+- [Fix] Fixed the way error messages are displayed within the error notice on the WooCommerce My Account page
+- [Fix] Confusing palette when changing it in the customizer
+- [Fix] Errors on the widgets page with WordPress 6.3
+- [Fix] Install plugin buttons appear on the About us page in the dashboard for users that do not have permission to install plugins
+- Increase WordPress minimum required version to 5.5
+- Update Google Fonts
+
+
+
+
+##### [Version 3.6.6](https://github.com/Codeinwp/neve/compare/v3.6.5...v3.6.6) (2023-08-03)
+
+- [Fix] Solve customizer permissions on multisite
+- [Fix] Add aria-label on the dropdown of the sidebar menu
+- [Fix] Incorrect author displayed on sticky posts with Feedzy Pro plugin
+- Introducing a new presentational tab dedicated to Otter within the About Us page of Neve Dashboard
+- Improve compatibility with WPML
+
+
+
+
+##### [Version 3.6.5](https://github.com/Codeinwp/neve/compare/v3.6.4...v3.6.5) (2023-07-17)
+
+- [Fix] Deprecated notice in HFG Footer
+- [Fix] About page display when using Whitelabel
+- [Fix] AMP compatibility with Standard Template Mode
+- [Fix] React script loop on Starter Sites page
+- Update Google Fonts
+- Update SDK
+
+
+
+
+##### [Version 3.6.4](https://github.com/Codeinwp/neve/compare/v3.6.3...v3.6.4) (2023-06-16)
+
+- [Fix] reported error for non-admin
+
+
+
+
+##### [Version 3.6.3](https://github.com/Codeinwp/neve/compare/v3.6.2...v3.6.3) (2023-06-15)
+
+- [Fix] Customizer link location
+
+
+
+
+##### [Version 3.6.2](https://github.com/Codeinwp/neve/compare/v3.6.1...v3.6.2) (2023-06-15)
+
+- [Feat] Dedicated Settings page
+- [Fix] Header cart icon color with multiple headers
+- [Fix] Sidebar Gradient
+- [Fix] Toggle the aria-pressed ARIA for the menu caret
+- [Fix] Alignment for mobile nav when set to center
+- Added filter for welcome discount
+- Update Visual Regression base images
+- Update Google Fonts
+
+
+
+
+##### [Version 3.6.1](https://github.com/Codeinwp/neve/compare/v3.6.0...v3.6.1) (2023-05-30)
+
+- [Fix] Solve compatibility check
+- Update SDK
+
+
+
+
+#### [Version 3.6.0](https://github.com/Codeinwp/neve/compare/v3.5.8...v3.6.0) (2023-05-29)
+
+- [Feat] Add relative CSS unit support for font size controls in the customizer
+- [Feat] Granular Heading Font Family Controls
+- [Feat] Manage top and bottom margins for pages and posts
+- [Fix] Accessibility warning for the site title
+- [Fix] Hover Skin Mode not working for the Footer Menu
+- [Fix] Improve the accessibility of the mobile menu by adding an aria-expanded attribute
+- [Fix] Button padding is different when using the EM unit
+- [Fix] Missing margin between heading and content inside the starter content
+- [Fix] Customizer sidebar flickers when changing the container control to 100%
+- [Fix] Breadcrumbs not available on the frontend
+- [Fix] Highlight the parent menu item when a submenu is active
+- [Fix] Items Hover Color does not apply to the active menu item
+- [Fix] Updated font size for product tabs h2
+- Upsell banners in HFG
+- Improve the E2E test coverage
+- Update Google Fonts
+- Update Cloud Templates and Patterns collection banner image
+
+
+
 
 ##### [Version 3.5.8](https://github.com/Codeinwp/neve/compare/v3.5.7...v3.5.8) (2023-04-19)
 

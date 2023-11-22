@@ -257,7 +257,8 @@ main .nv-shop {
   margin-bottom: 20px;
 }
 
-.woocommerce-NoticeGroup > ul {
+.woocommerce-NoticeGroup > ul,
+.woocommerce-notices-wrapper > ul {
   flex-direction: column;
   align-items: flex-start;
 }
@@ -532,7 +533,7 @@ a.added_to_cart:hover,
 }
 
 .woocommerce-Tabs-panel h2 {
-  font-size: var(--h4fontsize);
+  font-size: var(--h2fontsize);
 }
 
 .woocommerce #reviews {

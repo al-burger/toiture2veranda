@@ -1,16 +1,24 @@
-
 @media (max-width: 1024px) {
-    .header--row-inner {
-        background-color: $main-color;
-        position: fixed;
-        top: 0;
-        z-index: 2;
-        right: 0;
-        left: 0;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
+  .header--row-inner {
+    background-color: $main-color;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    right: 0;
+    left: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out; /* Ajout de transition pour une animation en douceur */
+  }
 }
 @media (min-width: 1024px) {
+  .header {
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    right: 0;
+    left: 0;
+    transition: transform 0.2s ease-in-out; /* Ajout de transition pour une animation en douceur */
+  }
   .header .hfg-slot {
     /* Styles à appliquer uniquement pour les écrans de bureau */
     &.left {
@@ -58,4 +66,7 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
   }
+}
+.header-hidden {
+  transform: translateY(-100%);
 }

@@ -1,0 +1,23 @@
+// _buttons.scss
+
+button,
+a {
+  transition: 0.2s ease;
+  color: $text-color;
+
+  &:hover {
+    box-shadow: none !important;
+    opacity: 1 !important;
+  }
+}
+
+.sticky-anchor {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  z-index: 999;
+
+  .wp-element-button {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  }
+}

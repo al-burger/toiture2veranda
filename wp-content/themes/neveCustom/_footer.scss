@@ -4,7 +4,7 @@
   }
 
   .builder-item .item--inner {
-    font-size: .75rem;
+    font-size: 0.75rem;
   }
 
   .hfg-slot {
@@ -16,13 +16,13 @@
   }
   .wp-block-latest-posts__list {
     li {
-        font-style: italic;
+      font-style: italic;
     }
     li::before {
-        content: "'' "
+      content: "'' ";
     }
     li::after {
-        content: " ''"
+      content: " ''";
     }
   }
 }

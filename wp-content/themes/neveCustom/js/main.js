@@ -1,14 +1,3 @@
-function handleStickyScroll() {
-  var stickyAnchor = document.querySelector(".sticky-anchor");
-
-  // Vérifier si l'élément sticky-anchor existe
-  if (stickyAnchor) {
-    stickyAnchor.addEventListener("click", function () {
-      var formElement = document.getElementById("wpforms-form-60");
-      formElement.scrollIntoView({ behavior: "smooth" });
-    });
-  }
-}
 function handleStickyHeader() {
   var header = document.querySelector(".header");
   var lastScrollTop = 0;
@@ -84,6 +73,5 @@ window.addEventListener("scroll", function () {
 
 
 fadeInElements();
-handleStickyScroll();
 handleStickyHeader();// Appelez la fonction pour gérer l'animation de 'alignfull'
 handleAlignfullAnimation();

@@ -68,9 +68,6 @@ sass --watch style.scss:style.css
     margin-bottom: 0;
   }
 }
-.t2v-realisations {
-  margin-top: 2rem;
-}
 .t2v-realisations .envira-lazy {
   overflow: hidden; /* Cvscode-file://vscode-app/d:/Jeux%20Video%20&%20Logiciels/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.htmlache tout ce qui dépasse du conteneur */
   transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); /* Transition plus lente et plus douce */
@@ -86,7 +83,7 @@ sass --watch style.scss:style.css
 
 @media (max-width: 1024px) {
   .header--row-inner {
-    background-color: #fedc00;
+    background-color: #47989c;
     position: fixed;
     top: 0;
     z-index: 2;
@@ -108,28 +105,6 @@ sass --watch style.scss:style.css
   .header .hfg-slot {
     /* Styles à appliquer uniquement pour les écrans de bureau */
   }
-  .header .hfg-slot.left {
-    background-color: #fedc00;
-  }
-  .header .hfg-slot.left::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    background-color: #fedc00;
-    width: 500px;
-    height: 100%;
-  }
-  .header .hfg-slot.left::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 50%;
-    bottom: 0;
-    left: 0;
-    background-color: #fedc00;
-    transform-origin: top right;
-    transform: skew(-45deg);
-  }
   .header .hfg-slot.left .builder-item--logo {
     z-index: 1;
   }
@@ -142,6 +117,35 @@ sass --watch style.scss:style.css
   .header-main-inner {
     z-index: 1;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+@media (min-width: 1280px) {
+  .header .hfg-slot.left::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    background-color: #fedc00;
+    width: 500px;
+    height: 100%;
+  }
+  .header .hfg-slot.left::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 60%;
+    bottom: 0;
+    left: 0;
+    background-color: #47989c;
+    transform-origin: top right;
+    transform: skew(-45deg);
+  }
+}
+@media (min-width: 960px) and (max-width: 1024px) {
+  .header--row-inner {
+    background-color: white;
+  }
+  .header--row-inner .neve-site-logo {
+    max-width: 12.5rem;
   }
 }
 .header-hidden {
@@ -171,6 +175,11 @@ sass --watch style.scss:style.css
   content: " ''";
 }
 
+@media (min-width: 1024px) {
+  .builder-item .item--inner {
+    font-size: 0.875rem;
+  }
+}
 .nv-post-cover {
   height: 66vh;
   background-attachment: fixed;
@@ -239,7 +248,7 @@ h1.wp-block-heading::after {
   display: block;
   width: 5rem;
   height: 0.33rem;
-  background-color: #d74a27;
+  background-color: #47989d;
   position: absolute;
   left: 3px;
 }
@@ -248,6 +257,17 @@ h1.wp-block-heading::after {
   border-radius: 10px;
 }
 
+body .t2v-solutions {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+}
+
+@media (min-width: 1024px) {
+  .t2v-solutions {
+    flex-direction: row;
+  }
+}
 .fade-in-element {
   opacity: 0;
   transform: translateY(50px);

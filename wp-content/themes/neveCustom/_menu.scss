@@ -1,6 +1,6 @@
 @media (max-width: 1024px) {
   .header--row-inner {
-    background-color: $main-color;
+    background-color: #47989c;
     position: fixed;
     top: 0;
     z-index: 2;
@@ -22,28 +22,6 @@
   .header .hfg-slot {
     /* Styles à appliquer uniquement pour les écrans de bureau */
     &.left {
-      background-color: $main-color;
-
-      &::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        background-color: $main-color;
-        width: 500px;
-        height: 100%;
-      }
-
-      &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 50%;
-        bottom: 0;
-        left: 0;
-        background-color: $main-color;
-        transform-origin: top right;
-        transform: skew(-45deg);
-      }
 
       .builder-item--logo {
         z-index: 1;
@@ -67,6 +45,40 @@
     }
   }
 }
+@media (min-width: 1280px) {
+  .header .hfg-slot {
+    &.left {
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        background-color: $main-color;
+        width: 500px;
+        height: 100%;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 60%;
+        bottom: 0;
+        left: 0;
+        background-color: #47989c;
+        transform-origin: top right;
+        transform: skew(-45deg);
+      }
+    }
+  }
+}
+@media (min-width: 960px) and (max-width:1024px) {
+  .header--row-inner {
+    background-color: white;
+    .neve-site-logo {
+      max-width: 12.5rem;
+    }
+  }
+} 
 .header-hidden {
   transform: translateY(-100%);
 }

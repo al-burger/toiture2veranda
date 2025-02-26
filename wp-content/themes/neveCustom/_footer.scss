@@ -21,8 +21,14 @@
     li::before {
       content: "'' ";
     }
-    li::after {
+    li::after { 
       content: " ''";
     }
+  }
+}
+
+@media (min-width: 1024px) {
+  .builder-item .item--inner {
+    font-size: 0.875rem;
   }
 }

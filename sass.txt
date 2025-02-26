@@ -1,0 +1,4 @@
+sass --watch style.scss:style.css   
+
+
+sass --watch D:/Documents/Projets\ Web/wordpress/htdocs/wordpress/wp-content/themes/neveCustom:D:/Documents/Projets\ Web/wordpress/htdocs/wordpress/wp-content/themes/neveCustom/style.css
